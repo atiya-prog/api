@@ -3,7 +3,7 @@
 $end_point = 'https://accounts.google.com/o/oauth2/v2/auth';
 $client_id = 'YOUR_ID';
 $client_secret = 'YOUR_SECRET';
-$redirect_uri = 'http://'.$_SERVER["HTTP_HOST"].$_SERVER["REQUEST_URI"]';                  //  http://'.$_SERVER["HTTP_HOST"].$_SERVER["REQUEST_URI"] or urn:ietf:wg:oauth:2.0:oob
+$redirect_uri = 'http://'.$_SERVER["HTTP_HOST"].$_SERVER["REQUEST_URI"]';   //  http://'.$_SERVER["HTTP_HOST"].$_SERVER["REQUEST_URI"] or urn:ietf:wg:oauth:2.0:oob
 $scope = 'https://www.googleapis.com/auth/drive.metadata.readonly';
 
 
@@ -24,7 +24,7 @@ echo '<a href = "'.$authUrl.'">Authorize</a></br>';
 if ( !file_exists('token.json') ){
     
     if ( isset($_GET['code'])){
-        $code = $_GET['code'];
+        $code = $_GET['code'];         // Visit $authUrl and get the authentication code
     }else{
         return;
     } 
